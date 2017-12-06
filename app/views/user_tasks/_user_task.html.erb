@@ -1,6 +1,7 @@
 <div class="well">
-    <%= user_task.description %> | 
-    <%= user_task.due.stamp('Nov 03, 2017') %>
-    <%= link_to 'Edit', edit_user_task_path(user_task), remote: true %>
-    <%= link_to 'Complete', user_task, remote: true, method: :delete, data: {confirm: 'Are you Sure?'} %>
+    <%= link_to user_task.description, user_task, remote: true, method: :delete, data: {confirm: 'Are you Sure?'} %>   
+    <%= link_to fa_icon('pencil'), edit_user_task_path(user_task), remote: true %>
+    <div class="pull-right">
+        <%= user_task.due.stamp('Nov 03, 2017') if user_task.due %>
+    </div>
 </div>
