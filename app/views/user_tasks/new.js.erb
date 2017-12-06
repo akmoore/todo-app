@@ -1,1 +1,27 @@
-$('#task-form').html("<%= j (render 'form') %>").slideDown(350);
+var nut = $('.nut');
+var tf = $('#task-form');
+var isDown = false;
+
+if (!isDown) {
+    
+}else{
+    $('#task-form').slideUp(350);
+}
+
+tf.html("<%= j (render 'form') %>").addClass('down').slideDown(350,function(){
+    isDown = true;
+    nut.html('Never Mind.');
+});
+
+/*
+if(isDown == false){
+    
+}
+
+nut.on('click', function(){
+    
+});
+if(tf.hasClass('down')){
+
+}
+*/
