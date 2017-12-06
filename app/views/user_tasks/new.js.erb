@@ -2,22 +2,28 @@ var nut = $('.nut');
 var tf = $('#task-form');
 var isDown = false;
 
-if (!isDown) {
-    
-}else{
-    $('#task-form').slideUp(350);
-}
-
+/*
 tf.html("<%= j (render 'form') %>").addClass('down').slideDown(350,function(){
     isDown = true;
     nut.html('Never Mind.');
 });
+*/
 
-/*
 if(isDown == false){
-    
+    tf.html("<%= j (render 'form') %>").addClass('down').slideDown(350,function(){
+        isDown = true;
+        nut.html('Never Mind.');
+    }); 
+}else{
+    nut.on('click', function(){
+        tf.removeClass('down').slideUp(350, function(){
+            isDown = false;
+            nut.html('New User Task');
+        });
+    })
 }
 
+/*
 nut.on('click', function(){
     
 });

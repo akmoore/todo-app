@@ -2,4 +2,5 @@
     <%= user_task.description %> | 
     <%= user_task.due.stamp('Nov 03, 2017') %>
     <%= link_to 'Edit', edit_user_task_path(user_task), remote: true %>
+    <%= link_to 'Complete', user_task, remote: true, method: :delete, data: {confirm: 'Are you Sure?'} %>
 </div>
